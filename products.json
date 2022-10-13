@@ -1,0 +1,74 @@
+[
+  {
+    "name" : "Refried beans",
+    "price" : 0.40,
+    "image" : "feves-au-lard.jpg",
+    "type" : "Legumes"
+  },
+  {
+    "name" : "hot dogs",
+    "price" : 1.99,
+    "image" : "hotdogsf.jpg",
+    "type" : "Viandes"
+  },
+  {
+    "name" : "spam",
+    "price" : 2.85,
+    "image" : "spam.jpg",
+    "type" : "Viandes"
+  },
+  {
+    "name" : "refried beans",
+    "price" : 0.99,
+    "image" : "haricots.jpg",
+    "type" : "Legumes"
+  },
+  {
+    "name" : "kidney beans",
+    "price" : 0.58,
+    "image" : "haricots-rouges.jpg",
+    "type" : "Legumes"
+  },
+  {
+    "name" : "garden peas",
+    "price" : 0.52,
+    "image" : "petitpois.jpg",
+    "type" : "Legumes"
+  },
+  {
+    "name" : "mushy peas",
+    "price" : 0.58,
+    "image" : "Capture.jpg",
+    "type" : "Legumes"
+  },
+  {
+    "name" : "corned beef",
+    "price" : 2.39,
+    "image" : "cornedbeef.jpg",
+    "type" : "Viandes"
+  },
+  {
+    "name" : "tomato soup",
+    "price" : 1.40,
+    "image" : "tomatosoup.jpg",
+    "type" : "Soupes"
+  },
+  {
+    "name" : "chopped tomatoes",
+    "price" : 0.45,
+    "image" : "tomato.jpg",
+    "type" : "Legumes"
+  },
+  {
+    "name" : "chicken noodle soup",
+    "price" : 1.89,
+    "image" : "chickennoodle.jpg",
+    "type" : "Soupes"
+  },
+  {
+    "name" : "carrot and coriander soup",
+    "price" : 1.49,
+    "image" : "carrotcoriander.jpg",
+    "type" : "Soupes"
+  }
+]
