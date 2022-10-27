@@ -37,18 +37,33 @@
             <option value="E">E</option>
             <option value="F">F</option>
           </select>
-     
           <label for="searchTerm">Entrez une recherche :</label>
           <input type="text" id="searchTerm" placeholder="Soupe de carottes">
       
           <button>Voir le résultat</button>
+          <div class="container">
+            <nav class="navbar navbar-expand navbar-dark bg-dark">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link " href="#">Panier</a></li>
+                <li class="nav-item"><a class="nav-link " href="#">Contact</a></li>
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="Creercompte.html" target="blank">Creer mon compte</a>
+                    <a class="dropdown-item" href="login.html" target="blank">Se connecter</a>
+                    <a class="dropdown-item" href="#">Suivi de commande</a>
+                    <a class="dropdown-item" href="#">Mon profil</a>
+                    <div class="c-product-sizer__submit c-product-sizer__submit--disabeled js-produits-submit"></div>
+                    <input class="c-product-sizer__submit" type="submit" value="" disabled=""> Ajouter au panier 
+                  </div>
+                </button>
+              </ul>
+            </nav>
+          </div>
         </div>
       </form>
     </div>
   </nav>
-  
     <main class="row row-cols-1 row-cols-md-4 g-4">
-
     </main>
   <script src="can-script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"

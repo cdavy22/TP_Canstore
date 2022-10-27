@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+</html>
+</meta>
+<body>
+    <div class="c-login__content">
+        <form class="c-login__form c-login__form--registered" id="form_connexion" action="/login.html" method="post" name="form_connexion" autocomplete="off">
+        <input type="hidden" name="form_login" value="1">
+        <div class="c-input">
+            <label for="client_email_login">Adresse e-mail</label>
+            <input type="email" name="client_email_login" id="client_email_login" autocomplete="off">
+        </div>
+        <div class="c-input">
+            <label for="client_password_login">Mot de passe</label>
+            <input type="password" name="client_password_login" id="client_password_login" autocomplete="off">
+        </div>
+        <div class="c-login__captcha captcha">
+        </div>
+                <div>
+                    <button id="submit-login-form" class="c-login__btn c-btn c-btn--primary" type="submit">        
+                        Se connecter 
+                    </button>
+                </div>      
+        </form>
+    </div>
+</body>

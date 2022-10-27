@@ -52,6 +52,8 @@ function shuffleArray(inputArray){
 function showProduct(finalGroup) {
   shuffleArray(finalGroup);
   var main = document.querySelector('main');
+  main.submit 
+
   //vidage
   while (main.firstChild) {
     main.removeChild(main.firstChild);
@@ -64,6 +66,7 @@ function showProduct(finalGroup) {
   }
   else {
     finalGroup.forEach(product => {
+      var submit = document.createAttribute ('input');
       var section = document.createElement('div');
       section.setAttribute('class', product.type);
       section.classList.add("card");
