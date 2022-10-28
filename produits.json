@@ -2,14 +2,14 @@
   {
     "nom" : "fèves au lard",
     "prix" : 0.40,
-    "image" : "beans.jpg",
+    "image" : "Capture85.jpg",
     "type" : "legumes",
     "nutriscore" : "B"
   },
   {
     "nom" : "hot-dogs",
     "prix" : 1.99,
-    "image" : "hotdogs.jpg",
+    "image" : "hot dog.jpg",
     "type" : "viande",
     "nutriscore" : "E"
   },
@@ -23,7 +23,7 @@
   {
     "nom" : "haricots frits",
     "prix" : 0.99,
-    "image" : "refried.jpg",
+    "image" : "Capture77.jpg",
     "type" : "legumes",
     "nutriscore" : "E"
   },
@@ -44,21 +44,21 @@
   {
     "nom" : "purée de pois",
     "prix" : 0.58,
-    "image" : "mushypeas.jpg",
+    "image" : "Capture76.jpg",
     "type" : "legumes",
     "nutriscore" : "B"
   },
   {
     "nom" : "bœuf salé",
     "prix" : 2.39,
-    "image" : "cornedbeef.jpg",
+    "image" : "boeuf.jpg",
     "type" : "viande",
     "nutriscore" : "E"
   },
   {
     "nom" : "Soupe à la tomate",
     "prix" : 1.40,
-    "image" : "tomatosoup.jpg",
+    "image" : "Capture86.jpg",
     "type" : "soupe",
     "nutriscore" : "C"
   },
@@ -72,14 +72,14 @@
   {
     "nom" : "Soupe de nouilles au poulet",
     "prix" : 1.89,
-    "image" : "chickennoodle.jpg",
+    "image" : "Capture88.jpg",
     "type" : "soupe",
     "nutriscore" : "D"
   },
   {
     "nom" : "Soupe de carottes et coriandre",
     "prix" : 1.49,
-    "image" : "carrotcoriander.jpg",
+    "image" : "Capture87.jpg",
     "type" : "soupe",
     "nutriscore" : "D"
   }

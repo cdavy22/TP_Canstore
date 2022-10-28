@@ -10,7 +10,7 @@ document.querySelector('button').addEventListener(
   });
 
 //recup données
-function addDonnee() {
+function addDonnee() {  
   fetch('produits.json').then(function (response) {
     if (response.ok) {
       response.json().then(function (json) {
@@ -44,15 +44,47 @@ function triage(products) {
   showProduct(finalGroup);
 }
 
+//Affichage Aléatoire des produit 
 function shuffleArray(inputArray){
   inputArray.sort(()=> Math.random() - 0.5);
 }
+
+function autocompleteMatch(event) {
+  var input = event.target;//recuperation de l'element input
+  var saisie = input.value;//recuperation de la saisie
+  var min_characters = 1;// minimum de caractères de la saisie
+  if (!isNaN(saisie) || saisie.length < min_characters ) { 
+    return [];
+  }
+  fetch('produits.json').then(function (response) {
+    if (response.ok) {
+      response.json().then(function (json) {
+        traiterReponse(json,saisie);
+       //lancement asynchrone !!
+      });
+    } else {
+      console.log('Network request for products.json failed with response ' + response.status + ': ' + response.statusText);
+    }
+  });
+}
+
+function traiterReponse(data,saisie)
+{
+var listeValeurs = document.getElementById('listeValeurs');
+listeValeurs.innerHTML = "";//mise à blanc des options
+var reg = new RegExp(saisie, "i");//Ajout de la condition "i" sur le regexp 
+let terms = data.filter(term => term.nom.match(reg));//recup des termes qui match avec la saisie
+    for (i=0; i<terms.length; i++) {//création des options
+      var option = document.createElement('option');
+                  option.value = terms[i].nom;
+                  listeValeurs.appendChild(option);
+}
+  }
 
 //Affichage
 function showProduct(finalGroup) {
   shuffleArray(finalGroup);
   var main = document.querySelector('main');
-  main.submit 
 
   //vidage
   while (main.firstChild) {
@@ -64,13 +96,22 @@ function showProduct(finalGroup) {
     para.textContent = 'Aucun résultats';
     main.appendChild(para);
   }
+  // 
   else {
     finalGroup.forEach(product => {
-      var submit = document.createAttribute ('input');
       var section = document.createElement('div');
       section.setAttribute('class', product.type);
       section.classList.add("card");
+      section.classList.add("d-grid");      
       section.classList.add("text-center");
+      section.classList.add("border-success");
+      section.classList.add("mb-4", "card");
+      var bouton = document.createElement('button');
+      bouton.setAttribute('class', product.type);
+      bouton.classList.add("btn")
+      bouton.classList.add("btn-outline-success")
+      bouton.classList.add("btn-lg")
+      bouton.textContent = "Acheter"
       var heading = document.createElement('div');
       heading.textContent = product.nom.replace(product.nom.charAt(0), product.nom.charAt(0).toUpperCase());
       heading.className = 'card-title'; 
@@ -84,13 +125,23 @@ function showProduct(finalGroup) {
       image.className = 'card-img-top'; 
       image.src = "images/" + product.image;
       image.alt = product.nom;
+      var panier = document.createElement('div');
+      var image2 = document.createElement('img');
+      image2.src = "icons/painier.png";
+      image2.width="50";
+      image2.height="50";
       
+
       section.appendChild(heading);
       section.appendChild(foot);
+      section.appendChild(bouton);
+      section.appendChild(panier);
+      section.appendChild(image);
       foot.appendChild(para);
       foot.appendChild(nutri);
-      section.appendChild(image);
       main.appendChild(section);
+      panier.appendChild(image2);
+      
     });
   }
 }
