@@ -23,7 +23,7 @@
   {
     "nom" : "haricots frits",
     "prix" : 0.99,
-    "image" : "Capture77.jpg",
+    "image" : "beans.jpg",
     "type" : "legumes",
     "nutriscore" : "E"
   },
@@ -44,7 +44,7 @@
   {
     "nom" : "purée de pois",
     "prix" : 0.58,
-    "image" : "Capture90.jpg",
+    "image" : "mushypeas.jpg",
     "type" : "legumes",
     "nutriscore" : "B"
   },
