@@ -1,6 +1,17 @@
 //premier affichage
 addDonnee();
-
+document.forms[0].categorie.addEventListener("change", function() {
+  addDonnee();
+});
+document.forms[0].nutri.addEventListener("change", function() {
+    addDonnee();
+});
+document.forms[0].searchTerm.addEventListener("keypress", function(e) {
+  if (e.keyCode === 13) {
+    e.preventDefault()
+    addDonnee();
+  }     
+});
 
 //sur le click
 document.querySelector('button').addEventListener(

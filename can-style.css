@@ -14,3 +14,22 @@
   background: black url(icons/soup.png) no-repeat 2px 2px;
   background-size: 24px 24px;
 }
+form {
+  background-color:#518e2c;
+  padding:10px;
+  width:280px;
+  flex-wrap: wrap-reverse;
+  }
+body {
+  font-family: 'Raleway', sans-serif;
+}
+aside {
+  border-right: 2px solid black;
+  background-color: rgba(255, 255, 128, 0.5);
+  flex-basis: 20%;
+}
+body>div {
+  border: 1px solid rgb(193, 249, 152);
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,12 @@
+body {
+    font-family:"trebuchet ms",sans-serif;
+    font-size:100%;
+    display:flex
+    }
+   form {
+    background-color:#a3ea76;
+    padding:10px;
+    width:280px;
+    flex-wrap: wrap-reverse;
+    }
+    
