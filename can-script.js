@@ -14,9 +14,9 @@ document.forms[0].searchTerm.addEventListener("keypress", function(e) {
 });
 
 //sur le click
-document.querySelector('button').addEventListener(
-  'click', function (event) {
+document.getElementById("btnReset").addEventListener('click', function (event) {
     event.preventDefault();
+    document.forms[0].reset()
     addDonnee();
   });
 
@@ -32,34 +32,7 @@ function addDonnee() {
     }
   });
 }
-
-//triage
-function triage(products) {
-  var valeur = { 0: "tous", 1: "legumes", 2: "soupe", 3: "viande" }
-  var type = valeur[document.forms[0].categorie.value];
-  var nutri = document.forms[0].nutri.value;
-  var lowerCaseSearchTerm = document.querySelector('#searchTerm').value.trim().toLowerCase();
-
-  var finalGroup = [];
-
-  products.forEach(product => {
-    if (product.type === type || type === 'tous') {//sur la categorie
-      if (product.nutriscore === nutri || nutri === '0') {//sur le nutri
-        if (product.nom.toLowerCase().indexOf(lowerCaseSearchTerm) !== -1 || lowerCaseSearchTerm === '') {//sur le searchterm
-          finalGroup.push(product);
-        }
-      }
-    }
-  });
-
-  showProduct(finalGroup);
-}
-
-//Affichage Aléatoire des produit 
-function shuffleArray(inputArray){
-  inputArray.sort(()=> Math.random() - 0.5);
-}
-
+//L'autocomplexion 
 function autocompleteMatch(event) {
   var input = event.target;//recuperation de l'element input
   var saisie = input.value;//recuperation de la saisie
@@ -92,6 +65,33 @@ let terms = data.filter(term => term.nom.match(reg));//recup des termes qui matc
 }
   }
 
+//triage
+function triage(products) {
+  var valeur = { 0: "tous", 1: "legumes", 2: "soupe", 3: "viande" }
+  var type = valeur[document.forms[0].categorie.value];
+  var nutri = document.forms[0].nutri.value;
+  var lowerCaseSearchTerm = document.querySelector('#searchTerm').value.trim().toLowerCase();
+
+  var finalGroup = [];
+
+  products.forEach(product => {
+    if (product.type === type || type === 'tous') {//sur la categorie
+      if (product.nutriscore === nutri || nutri === '0') {//sur le nutri
+        if (product.nom.toLowerCase().indexOf(lowerCaseSearchTerm) !== -1 || lowerCaseSearchTerm === '') {//sur le searchterm
+          finalGroup.push(product);
+        }
+      }
+    }
+  });
+
+  showProduct(finalGroup);
+}
+
+//Affichage Aléatoire des produit 
+function shuffleArray(inputArray){
+  inputArray.sort(()=> Math.random() - 0.5);
+}
+
 //Affichage
 function showProduct(finalGroup) {
   shuffleArray(finalGroup);
@@ -101,15 +101,15 @@ function showProduct(finalGroup) {
   while (main.firstChild) {
     main.removeChild(main.firstChild);
   }
-  // affichage propduits
+  // affichage produits
   if (finalGroup.length === 0) {
     var para = document.createElement('p');
     para.textContent = 'Aucun résultats';
     main.appendChild(para);
   }
-  // 
+
   else {
-    finalGroup.forEach(product => {
+    finalGroup.forEach(product => {;
       var section = document.createElement('div');
       section.setAttribute('class', product.type);
       section.classList.add("card");
@@ -119,10 +119,11 @@ function showProduct(finalGroup) {
       section.classList.add("mb-4", "card");
       var bouton = document.createElement('button');
       bouton.setAttribute('class', product.type);
-      bouton.classList.add("btn")
-      bouton.classList.add("btn-outline-success")
-      bouton.classList.add("btn-lg")
-      bouton.textContent = "Acheter"
+      bouton.setAttribute("onclick","Acheter()");
+      bouton.classList.add("btn");
+      bouton.classList.add("btn-outline-success");
+      bouton.classList.add("btn-lg");
+      bouton.textContent = "Acheter";
       var heading = document.createElement('div');
       heading.textContent = product.nom.replace(product.nom.charAt(0), product.nom.charAt(0).toUpperCase());
       heading.className = 'card-title'; 
@@ -141,7 +142,10 @@ function showProduct(finalGroup) {
       image2.src = "icons/painier.png";
       image2.width="50";
       image2.height="50";
-      
+      var option = document.createElement('option');
+      option.value = nutri;
+      option.value = section;
+      listeValeurs.appendChild(option);
 
       section.appendChild(heading);
       section.appendChild(foot);
@@ -156,3 +160,17 @@ function showProduct(finalGroup) {
     });
   }
 }
+
+//remplir le panier
+var nbProduits = 0
+var panier = document.getElementById('panier')
+panier.innerHTML = (nbProduits);
+function Acheter(){
+  nbProduits += 1;
+  panier.innerHTML = "";
+  panier.innerHTML = nbProduits;
+}
+function videPanier(){
+  nbProduits = 0
+  panier.innerText = (nbProduits);
+} 

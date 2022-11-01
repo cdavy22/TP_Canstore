@@ -9,4 +9,7 @@ body {
     width:280px;
     flex-wrap: wrap-reverse;
     }
+    div {
+        text-decoration-color: darkgray;
+    }
     
