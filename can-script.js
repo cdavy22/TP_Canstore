@@ -32,6 +32,9 @@ function addDonnee() {
     }
   });
 }
+
+document.getElementById('searchTerm').addEventListener("keyup", function (event) { autocompleteMatch(event) })
+
 //L'autocomplexion 
 function autocompleteMatch(event) {
   var input = event.target;//recuperation de l'element input
