@@ -108,6 +108,7 @@ function showProduct(finalGroup) {
     main.appendChild(para);
   }
 
+  //jointure diferente section attribué
   else {
     finalGroup.forEach(product => {;
       var section = document.createElement('div');
@@ -161,7 +162,7 @@ function showProduct(finalGroup) {
   }
 }
 
-//remplir le panier
+//fonction pour remplir le panier
 var nbProduits = 0
 var panier = document.getElementById('panier')
 panier.innerHTML = (nbProduits);
